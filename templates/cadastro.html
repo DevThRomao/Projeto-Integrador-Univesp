@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="/static/cadastro.css">
+</head>
+<body>
+    <div id="select_destino">
+    <ul>
+        <li><a href="{{ url_for('index') }}">Página Inicial</a></li>
+        <li><a href="{{ url_for('cadastro') }}">Cadastro de Voluntários</a></li>
+        <li><a href="{{ url_for('voluntarios') }}">Voluntários Cadastrados</a></li>
+    </ul>
+    </div>
+    
+<div id="form_fundo">
+    <h1>Cadastro</h1>
+
+    <div id="form_frente">
+        <form method="POST" action="/cadastro">
+            <fieldset>
+                <div>
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome" required><br><br>
+                </div>    
+                <div>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required><br><br>
+                </div>   
+                <div>
+                    <label for="telefone">Telefone:</label>
+                    <input type="text" id="telefone" name="telefone" required><br><br>
+                </div>
+                <div>
+                    <label for="endereço">Endereço:</label>
+                    <input type="text" id="endereço" name="endereço" required><br><br>
+                </div>
+                <input type="submit" value="Cadastrar">
+            </fieldset>
+
+        </form>
+    </div> 
+</div>
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voluntários</title>
+    <link rel="stylesheet" href="/static/voluntarios.css">
+</head>
+<body>
+    <div id="select_destino">
+        <ul>
+            <li><a href="{{ url_for('index') }}">Página Inicial</a></li>
+            <li><a href="{{ url_for('cadastro') }}">Cadastro de Voluntários</a></li>
+            <li><a href="{{ url_for('voluntarios') }}">Voluntários Cadastrados</a></li>
+        </ul>
+    </div>
+    
+    <div id="search">
+        <form action="{{ url_for('buscar_voluntarios') }}" method="GET">
+            <label for="termo_busca">Buscar Voluntário:</label>
+            <input type="text" id="termo_busca" name="termo_busca" required>
+            <button type="submit">Buscar</button>
+        </form>
+        
+    </div>
+
+    <h1>Lista de Voluntários</h1>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Email</th>
+            <th>Telefone</th>
+            <th>Endereço</th>
+        </tr>
+        {% for voluntario in voluntarios %}
+        <tr>
+            <td>{{ voluntario.id }}</td>
+            <td>{{ voluntario.nome }}</td>
+            <td>{{ voluntario.email }}</td>
+            <td>{{ voluntario.telefone }}</td>
+            <td>{{ voluntario.endereço }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
