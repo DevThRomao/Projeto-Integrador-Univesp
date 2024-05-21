@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Voluntários</title>
-    <link rel="stylesheet" href="/static/voluntarios.css">
+    <title>Administrar Voluntários</title>
+    <link rel="stylesheet" href="/static/admvoluntarios.css"
 </head>
 <body>
+
     <div id="select_destino">
         <ul>
             <li><a href="{{ url_for('index') }}">Página Inicial</a></li>
@@ -23,8 +24,7 @@
         </form>
         
     </div>
-
-    <h1>Lista de Voluntários</h1>
+    <h1>Administrar Voluntários</h1>
     <table border="1">
         <tr>
             <th>ID</th>
@@ -32,6 +32,7 @@
             <th>Email</th>
             <th>Telefone</th>
             <th>Endereço</th>
+            <th>Ações</th>
         </tr>
         {% for voluntario in voluntarios %}
         <tr>
@@ -40,10 +41,12 @@
             <td>{{ voluntario.email }}</td>
             <td>{{ voluntario.telefone }}</td>
             <td>{{ voluntario.endereço }}</td>
+            <td>
+                <a href="{{ url_for('editar_voluntario', id=voluntario.id) }}">Editar</a>
+                <a href="{{ url_for('excluir_voluntario', id=voluntario.id) }}" onclick="return confirm('Tem certeza que deseja excluir este voluntário?');">Excluir</a>
+            </td>
         </tr>
         {% endfor %}
     </table>
-
-    
 </body>
 </html>

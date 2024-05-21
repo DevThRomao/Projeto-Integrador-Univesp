@@ -48,6 +48,30 @@ def buscar_voluntarios():
     ).all()
     return render_template('voluntarios.html', voluntarios=voluntarios)
 
+@app.route('/admvoluntarios')
+def administrar_voluntarios():
+    voluntarios = Voluntario.query.all()
+    return render_template('admvoluntarios.html', voluntarios=voluntarios)
+@app.route('/editar_voluntario/<int:id>', methods=['GET', 'POST'])
+def editar_voluntario(id):
+    voluntario = Voluntario.query.get_or_404(id)
+    if request.method == 'POST':
+        # Atualize os dados do voluntário com base no formulário enviado
+        voluntario.nome = request.form['nome']
+        voluntario.email = request.form['email']
+        voluntario.telefone = request.form['telefone']
+        voluntario.endereço = request.form['endereço']
+        db.session.commit()
+        return redirect(url_for('administrar_voluntarios'))
+    return render_template('editar_voluntario.html', voluntario=voluntario)
+
+@app.route('/excluir_voluntario/<int:id>')
+def excluir_voluntario(id):
+    voluntario = Voluntario.query.get_or_404(id)
+    db.session.delete(voluntario)
+    db.session.commit()
+    return redirect(url_for('administrar_voluntarios'))
+
 
 if __name__ == '__main__':
     # Usar app.app_context() para criar o banco de dados
