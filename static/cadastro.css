@@ -1,9 +1,9 @@
 @charset "UTF-8";
 
 body{
-   font-family: Arial, Helvetica, sans-serif;
-    background-color:rgb(249, 255, 191)
-}
+    font-family: Arial, Helvetica, sans-serif;
+     background-color:rgb(239, 245, 219)
+ }
 
 
 
@@ -53,9 +53,10 @@ a{
 }
 
 div#select_destino{
-    background-color: white;
-   
-} 
+    background-color: greenyellow;
+    margin: auto;
+    border-radius: 5px;
+}
 
 h1 {
     text-align: center;
@@ -84,8 +85,8 @@ input[type="email"] {
 input[type="submit"] {
     width: 100%;
     padding: 10px;
-    background-color: #ffb200;
-    color: #fff;
+    background-color: #4df002;
+    color: black;
     border: none;
     border-radius: 4px;
     cursor: pointer;
@@ -94,3 +95,4 @@ input[type="submit"] {
 input[type="submit"]:hover {
     background-color: #eace8c;
 }
+

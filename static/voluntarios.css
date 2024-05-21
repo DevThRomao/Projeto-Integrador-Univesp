@@ -1,9 +1,9 @@
 @charset "UTF-8";
 
 body{
-   font-family: Arial, Helvetica, sans-serif;
-    background-color:rgb(249, 255, 191)
-}
+    font-family: Arial, Helvetica, sans-serif;
+     background-color:rgb(239, 245, 219)
+ }
 
 
 
@@ -46,19 +46,18 @@ a{
     font-weight:bold;
 }
 div#select_destino{
-    background-color: white;
+    background-color: greenyellow;
     margin: auto;
     border-radius: 5px;
 }
 
 div#search{
-    background-color: white;
+    background-color: greenyellow;
     text-align: center;
-
     margin: auto;
     border-radius: 5px;
     font-weight: bold;
     box-shadow: 1px 1px 1px black;
-
+    padding: 10px;
 }
 

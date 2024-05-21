@@ -8,10 +8,10 @@
 </head>
 <body>
     <div id="select_destino">
-    <ul>
+    <ul>   
         <li><a href="{{ url_for('index') }}">Página Inicial</a></li>
-        <li><a href="{{ url_for('cadastro') }}">Cadastro de Voluntários</a></li>
-        <li><a href="{{ url_for('voluntarios') }}">Voluntários Cadastrados</a></li>
+        <li><a href="{{ url_for('cadastro') }}">Cadastro de Estabelecimento Voluntário</a></li>
+        <li><a href="{{ url_for('voluntarios') }}">Busca de Estabelecimento Voluntário</a></li>
     </ul>
     </div>
     
@@ -31,7 +31,7 @@
                 </div>   
                 <div>
                     <label for="telefone">Telefone:</label>
-                    <input type="text" id="telefone" name="telefone" required placeholder="(DDD)99999-9999"><br><br>
+                    <input type="text" id="telefone" name="telefone"  required placeholder="(xx)xxxxx-xxxx"><br><br>
                 </div>
                 <div>
                     <label for="endereço">Endereço:</label>

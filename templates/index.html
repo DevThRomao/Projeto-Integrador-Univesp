@@ -10,14 +10,21 @@
     <div id="select_destino">
         <ul>
             <li><a href="{{ url_for('index') }}">Página Inicial</a></li>
-            <li><a href="{{ url_for('cadastro') }}">Cadastro de Voluntários</a></li>
-            <li><a href="{{ url_for('voluntarios') }}">Voluntários Cadastrados</a></li>
+            <li><a href="{{ url_for('cadastro') }}">Cadastro de Estabelecimento Voluntário</a></li>
+            <li><a href="{{ url_for('voluntarios') }}">Busca de Estabelecimento Voluntário</a></li>
         </ul>
     </div>    
-    
 
-    <h1>Sejam bem vindos ao Portal Aumigos</h1>
+    
+<header>
+    <div class="img">
+        <img src="{{ url_for('static', filename='img/logoAumigos2.png') }}" alt="Logo do Portal Aumigos">
+    </div>
+        <h1>Bem vindos ao Portal Ajuda Aumigos</h1>
     <h2>Contribua nessa causa</h2>
+
+</header>
+    
     
 </body>
 </html>
